@@ -7,6 +7,8 @@ extern "C" {
 
 #include <stdio.h>
 #include <stdint.h>
+#include "oled_datatype.h"
+
 
 #define OLED_LOG (void)
 
@@ -16,7 +18,7 @@ void OLED_Init(void); //初始化驱动
 void OLED_drawPixel(int x, int y, uint8_t value);
 void OLED_SendBuff(uint8_t buff[8][128]); //将8*128字节的buff一次性全部发送的函数
 
-int OLED_getKey(void);
+InputMsg OLED_getKeyMsg(void);
 
 int OLED_isRun(void);
 
