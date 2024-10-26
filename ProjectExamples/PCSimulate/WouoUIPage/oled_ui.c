@@ -151,11 +151,19 @@ static void OLED_ConWinReact(PageAddr bg,Option* win);
 UiPara g_default_ui_para = 
 {
     .ani_param = {
+#if 0
         [TILE_ANI] = 120, //磁贴动画速度
         [LIST_ANI] = 120, //列表动画速度
         [WIN_ANI] = 120,  //弹窗动画速度
         [TAG_ANI] = 120,  //标签动画速度
         [DIGI_ANI] = 100, //数字动画滚动速度
+#else
+        [TILE_ANI] = 20, //磁贴动画速度
+        [LIST_ANI] = 20, //列表动画速度
+        [WIN_ANI] = 20,  //弹窗动画速度
+        [TAG_ANI] = 20,  //标签动画速度
+        [DIGI_ANI] = 20, //数字动画滚动速度
+#endif
     },
     .ufd_param = {
         [TILE_UFD] = True, //磁贴图标从头展开开关
@@ -169,8 +177,13 @@ UiPara g_default_ui_para =
     .conwin_broken = True, //确认弹窗背景虚化开关
     .digital_ripple = True, //digital页面波纹递增动画开关
     .raderpic_scan_mode = False, //镭射文字只扫描亮处 
+#if 0
     .raderpic_scan_rate = 4,  //镭射文字扫描速度
     .raderpic_move_rate = 50, //镭射文字移动速度
+#else
+    .raderpic_scan_rate = 2,  //镭射文字扫描速度
+    .raderpic_move_rate = 10, //镭射文字移动速度
+#endif
 };  
 //默认UI对象（同时进行初始化）
 WouoUI default_ui = {
